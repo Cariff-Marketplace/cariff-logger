@@ -1,0 +1,32 @@
+{
+  "name": "cariff-logger",
+  "version": "1.0.0",
+  "description": "Unified structured JSON logger and correlation ID tracing module for Cariff microservices",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cariff",
+    "nestjs",
+    "logger",
+    "structured-logging",
+    "json-logging",
+    "correlation-id",
+    "loki"
+  ],
+  "author": "Cariff Marketplace",
+  "license": "MIT",
+  "peerDependencies": {
+    "@nestjs/common": ">=9.0.0",
+    "@nestjs/core": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
