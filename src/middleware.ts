@@ -1,4 +1,4 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware, Optional } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import { LoggerContextStore } from './context';
 import { CariffLogger } from './logger.service';
@@ -24,8 +24,8 @@ export interface HttpResponseLike {
 export class CorrelationIdMiddleware implements NestMiddleware {
   private readonly logger: CariffLogger;
 
-  constructor(serviceName = 'api-gateway') {
-    this.logger = new CariffLogger(serviceName);
+  constructor(@Optional() serviceName?: string) {
+    this.logger = new CariffLogger(serviceName || 'api-gateway');
   }
 
   use(req: HttpRequestLike, res: HttpResponseLike, next: (error?: any) => void): void {
